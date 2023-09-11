@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "This is nice blog",
-    "author": "Brian Blogger",
-    "url": "wwww.blogs.com",
+    "title": "Test after validating and lint",
+    "author": "Maija Mehiläinen",
+    "url": "wwww.asdlajshd.com",
     "likes": 2
 }
