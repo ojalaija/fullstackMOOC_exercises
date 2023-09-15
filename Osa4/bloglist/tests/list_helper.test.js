@@ -87,9 +87,9 @@ describe('total likes', () => {
 })
 
 describe('favorite blog', () => {
-  test('if there are no blogs should give a message', () => {
+  test('of no blogs should be undefined', () => {
     const result = listHelper.favoriteBlog(emptyList)
-    expect(result).toBe('no blogs yet')
+    expect(result).toBe(undefined)
   })
 
   test('when list has only one blog should return that blog info', () => {
@@ -119,9 +119,9 @@ describe('favorite blog', () => {
 })
 
 describe('most blogs', () => {
-  test('of no blogs should return message', () => {
+  test('of no blogs should be undefined', () => {
     const result = listHelper.mostBlogs(emptyList)
-    expect(result).toBe('no blogs yet')
+    expect(result).toBe(undefined)
   })
 
   test('of one blog should return author name and 1', () => {
@@ -142,9 +142,9 @@ describe('most blogs', () => {
 })
 
 describe('most likes', () => {
-  test('of no blogs should return message', () => {
+  test('of no blogs should be undefined', () => {
     const result = listHelper.mostLikes(emptyList)
-    expect(result).toBe('no blogs yet')
+    expect(result).toBe(undefined)
   })
 
   test('of one blog should return author name and likes of the blog', () => {
