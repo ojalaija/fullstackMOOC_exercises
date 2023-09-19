@@ -49,6 +49,47 @@ test('a new blog can be added and its title is right', async () => {
   )
 })
 
+test('if "likes"-field without value gets value 0', async () => {
+  const noLikesBlog = {
+    title: 'A Beginner\'s Guide to JavaScript async/await, with Examples',
+    author: 'James Hibbard',
+    url: 'https://www.sitepoint.com/javascript-async-await/',
+  }
+
+  const response = await api
+    .post('/api/blogs')
+    .send(noLikesBlog)
+    .expect(201)
+    .expect('Content-Type', /application\/json/)
+
+  console.log(response.body)
+  expect(response.body.likes).toBe(0)
+})
+
+test('if there is no title, to return "400 Bad Request"', async () => {
+  const noTitleBlog = {
+    author: 'James Hibbard',
+    url: 'https://www.sitepoint.com/javascript-async-await/',
+  }
+
+  await api
+    .post('/api/blogs')
+    .send(noTitleBlog)
+    .expect(400)
+})
+
+test('if there is no url, to return "400 Bad Request"', async () => {
+  const noUrlBlog = {
+    title: 'A Beginner\'s Guide to JavaScript async/await, with Examples',
+    author: 'James Hibbard',
+  }
+
+  await api
+    .post('/api/blogs')
+    .send(noUrlBlog)
+    .expect(400)
+})
+
 afterAll(async () => {
   await mongoose.connection.close()
 })
