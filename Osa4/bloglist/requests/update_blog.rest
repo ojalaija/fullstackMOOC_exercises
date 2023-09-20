@@ -1,0 +1,10 @@
+PUT http://localhost:3003/api/blogs/64fae1b7faa279501770e7a8
+Content-Type: application/json
+
+{
+    "title": "This is a nice blog",
+    "author": "Brian Blogger",
+    "url": "wwww.blogs.com",
+    "likes": 6,
+    "id": "64fae1b7faa279501770e7a8"
+  }
