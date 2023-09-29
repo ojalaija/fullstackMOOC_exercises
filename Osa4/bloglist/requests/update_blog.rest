@@ -1,10 +1,9 @@
-PUT http://localhost:3003/api/blogs/64fae1b7faa279501770e7a8
+PUT http://localhost:3003/api/blogs/651467b0a720fed2f03390a5
 Content-Type: application/json
 
 {
-    "title": "This is a nice blog",
-    "author": "Brian Blogger",
-    "url": "wwww.blogs.com",
-    "likes": 6,
-    "id": "64fae1b7faa279501770e7a8"
-  }
+    "title": "Blog about wine",
+    "author": "Wine Drinker",
+    "url": "wwww.givemeallthewinethanks.com",
+    "likes": 3
+}

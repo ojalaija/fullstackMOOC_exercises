@@ -1,9 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbmJhdCIsImlkIjoiNjUxM2VkMWJmNDgyYjc1MGU2NTA0MmVjIiwiaWF0IjoxNjk1OTc0MTczLCJleHAiOjE2OTU5Nzc3NzN9.F018aRrvf0DmpA7nprDqrHWjtzTPAlwIVQ11r-89-9A
 
 {
-    "title": "Test after validating and lint",
-    "author": "Maija Mehiläinen",
-    "url": "wwww.asdlajshd.com",
-    "likes": 2
+    "title": "Blog about hide outs",
+    "author": "Secret Hero",
+    "url": "wwww.bestplaceforhidingisinacave.com",
+    "likes": 0
 }
