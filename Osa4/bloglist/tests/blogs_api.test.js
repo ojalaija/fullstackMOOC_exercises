@@ -64,7 +64,7 @@ describe('when there are initially some blogs saved on the list', () => {
     })
 
     test('fails with status code 401 if there is no token', async () => {
-      await api.auth('')
+      await api.auth(null)
       const newBlog = {
         title: 'Failing blog',
         author: 'Failing Author',
