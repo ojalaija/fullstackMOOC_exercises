@@ -1,1 +1,4 @@
-FullStack Open 2022 tehtävien palautukset.
+Full Stack Open course exercises.
+
+More about the course:
+https://fullstackopen.com/en/
