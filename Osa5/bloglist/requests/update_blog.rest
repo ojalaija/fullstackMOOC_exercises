@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/651467b0a720fed2f03390a5
+Content-Type: application/json
+
+{
+    "title": "Blog about wine",
+    "author": "Wine Drinker",
+    "url": "wwww.givemeallthewinethanks.com",
+    "likes": 3
+}
