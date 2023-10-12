@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     blogService.getAll().then(blogs =>
       setBlogs( blogs )
-    )  
+    )
   }, [])
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const App = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault()
-    
+
     try {
       const user = await loginService.login({
         username, password,
@@ -127,27 +127,27 @@ const App = () => {
       <div>
         <h2>Log in to application</h2>
         <Notification message={notification} type={notificationType} />
-          <form onSubmit={handleLogin}>
-            <div>
+        <form onSubmit={handleLogin}>
+          <div>
               username
-              <input
+            <input
               type="text"
               value={username}
               name="Username"
               onChange={({ target }) => setUsername(target.value)}
-              />
-            </div>
-            <div>
+            />
+          </div>
+          <div>
               password
-              <input
+            <input
               type="password"
               value={password}
               name="Password"
               onChange={({ target }) => setPassword(target.value)}
-              />
-            </div>
-            <button type="submit">login</button>
-          </form>
+            />
+          </div>
+          <button type="submit">login</button>
+        </form>
       </div>
     )
   }
@@ -159,7 +159,7 @@ const App = () => {
       <p>{user.name} logged in</p>
       <button onClick={handleLogout}>logout</button>
       <div>
-      {blogForm()}
+        {blogForm()}
       </div>
       {sortedBlogs()}
     </div>
