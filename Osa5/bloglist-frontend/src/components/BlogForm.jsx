@@ -6,11 +6,7 @@ const BlogForm = ({ createBlog }) => {
 
   const addBlog = (event) => {
     event.preventDefault()
-    createBlog({
-      title: newBlog.title,
-      author: newBlog.author,
-      url: newBlog.url
-    })
+    createBlog(newBlog)
 
     setNewBlog({ title: '', author: '', url: '' })
   }
@@ -32,6 +28,7 @@ const BlogForm = ({ createBlog }) => {
           <input
             value={newBlog.title}
             onChange={handleBlogFormChange('title')}
+            id='title-input'
           />
         </div>
         <div>
@@ -39,6 +36,7 @@ const BlogForm = ({ createBlog }) => {
           <input
             value={newBlog.author}
             onChange={handleBlogFormChange('author')}
+            id='author-input'
           />
         </div>
         <div>
@@ -46,9 +44,10 @@ const BlogForm = ({ createBlog }) => {
           <input
             value={newBlog.url}
             onChange={handleBlogFormChange('url')}
+            id='url-input'
           />
         </div>
-        <button type="submit">create</button>
+        <button type="submit" className='submitButton'>create</button>
       </form>
     </div>
   )

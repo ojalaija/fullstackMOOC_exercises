@@ -62,7 +62,7 @@ const App = () => {
       setPassword('')
     } catch (exception) {
       setNotificationType('error')
-      notificationMessage('wrong username or password')
+      notificationMessage('wrong credentials')
     }
   }
 
@@ -127,13 +127,14 @@ const App = () => {
       <div>
         <h2>Log in to application</h2>
         <Notification message={notification} type={notificationType} />
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} id='loginForm'>
           <div>
               username
             <input
               type="text"
               value={username}
-              name="Username"
+              name="username"
+              id='username'
               onChange={({ target }) => setUsername(target.value)}
             />
           </div>
@@ -142,11 +143,12 @@ const App = () => {
             <input
               type="password"
               value={password}
-              name="Password"
+              name="password"
+              id='password'
               onChange={({ target }) => setPassword(target.value)}
             />
           </div>
-          <button type="submit">login</button>
+          <button id='login-button' type="submit">login</button>
         </form>
       </div>
     )
@@ -161,7 +163,9 @@ const App = () => {
       <div>
         {blogForm()}
       </div>
-      {sortedBlogs()}
+      <div id='blogList'>
+        {sortedBlogs()}
+      </div>
     </div>
   )
 }

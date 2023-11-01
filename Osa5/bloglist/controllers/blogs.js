@@ -35,14 +35,13 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
   const blog = await Blog.findById(request.params.id)
   const user = request.user
 
-  if (blog.user.toString() !== user._id.toString()) {
+  if (!user || blog.user.toString() !== user._id.toString()) {
     return response.status(401).json({ error: 'wrong user' })
   }
 
-  await blog.deleteOne()
-  const index = user.blogs.indexOf(blog)
-  user.blogs.splice(index, 1)
+  user.blogs = user.blogs.filter(b => b.toString() !== blog.id.toString())
   await user.save()
+  await blog.deleteOne()
 
   response.status(204).end()
 })

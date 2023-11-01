@@ -12,15 +12,6 @@ const Blog = ({ blog, addLike, removeBlog, user }) => {
     showAllInfo ? 'hide' : 'view'
   )
 
-  const showUserName = () => {
-    if (blog.user !== undefined) {
-      return (
-        <div>
-          {blog.user.name}
-        </div>)
-    }
-  }
-
   const blogStyle = {
     paddingTop: 10,
     paddingLeft: 2,
@@ -31,23 +22,23 @@ const Blog = ({ blog, addLike, removeBlog, user }) => {
 
   const showWhenAll = { display: showAllInfo ? '' : 'none' }
   const showToUser = {
-    display: (blog.user !== undefined && user.username === blog.user.username) ? '' : 'none',
+    display: (user.username === blog.user.username) ? '' : 'none',
     backgroundColor: 'lightblue'
   }
 
   return (
-    <div style={blogStyle}>
-      <div>
-        {blog.title} {blog.author}
-        <button onClick={toggleShowAll}>{buttonLabel}</button>
+    <div style={blogStyle} className='blog'>
+      <div className='blogName'>
+        {blog.title} by {blog.author}
+        <button onClick={toggleShowAll} className='displayButton'>{buttonLabel}</button>
       </div>
-      <div style={showWhenAll}>
+      <div style={showWhenAll} className='additionalInfo'>
         {blog.url}
         <br/>
         likes: {blog.likes}
-        <button onClick={addLike}>like</button>
+        <button onClick={addLike} className='likeButton'>like</button>
         <br/>
-        {showUserName()}
+        {blog.user.name}
         <br/>
         <button style={showToUser} onClick={removeBlog}>remove</button>
       </div>
